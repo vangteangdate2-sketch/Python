@@ -1,6 +1,15 @@
-plus = int(input("Enter the number for a: "))
-minus = int(input("Enter the number for b: "))
+import pandas as pd
+import numpy as np
+from scipy.stats import zscore
 
-sum = plus + minus
+np.random.seed(0)
+normal_iq = np.random.normal(100, 5, 100)
+outliers = [30, 250]
 
-print(f'the total number of a and b is {sum}')
+iq_data = np.concatenate([normal_iq, outliers])
+
+df = pd.DataFrame({"IQ": iq_data})
+df["Z_Score"] = zscore(df["IQ"])
+
+outliers_z = df[np.abs(df["Z_Score"]) > 3]
+print(outliers_z)
