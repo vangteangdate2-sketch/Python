@@ -1,6 +1,10 @@
 import statistics
 
-students = {"John": 75, 'Mary': 90, 'Many': 100}
+students = {
+    "John": [80,80,80,80], 
+    'Mary': [90,90,90,90], 
+    'Many': [100,100,100,100]
+    }
 
 # a) Calculate average grade for each student 
 averages = statistics.mean(students.values())
