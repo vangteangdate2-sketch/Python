@@ -16,7 +16,7 @@ print('')
 print('Avg Number of Order is', df['Orders'].mean())
 print('')
 
-print('Days have more than 150 orders', df.loc[df['Orders'] > 150, 'Day'].tolist())
+print('Days have more than 150 orders of the this is', df.loc[df['Orders'] > 150, 'Day'].tolist())
 print(' ')
 
 print('Total Revenue of this overall day', df['Revenue'].sum())
