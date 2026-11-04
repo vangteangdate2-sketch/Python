@@ -19,5 +19,5 @@ print('')
 print('Days have more than 150 orders', df.loc[df['Orders'] > 150, 'Day'].tolist())
 print(' ')
 
-print('Total Revenue', df['Revenue'].sum())
+print('Total Revenue of this overall day', df['Revenue'].sum())
 print('')
