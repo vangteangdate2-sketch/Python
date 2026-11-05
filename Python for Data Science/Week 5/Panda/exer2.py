@@ -1,8 +1,8 @@
 import pandas as pd
 
-data = { "Day": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-         "Orders": [100, 120, 90, 150, 180, 220, 200], 
-         "Revenue": [2000, 2400, 1800,3000, 3600, 4400, 4000]
+data = { "Day": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",'OverDay'],
+         "Orders": [100, 120, 90, 150, 180, 220, 200, 3000],
+         "Revenue": [2000, 2400, 1800,3000, 3600, 4400, 4000, 2000]
 }
 
 df = pd.DataFrame(data)
