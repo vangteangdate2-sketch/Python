@@ -9,7 +9,7 @@ data = {
 df = pd.DataFrame(data)
 df['age'] = [19,20,21]
 df['status'] = df['score'] <= 50
-
+df['final score'] = df['score'] + 5
 
 print(df)
 print('')
