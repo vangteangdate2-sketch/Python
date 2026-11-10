@@ -16,6 +16,6 @@ print('')
 print(df[df['score']>50])
 print('')
 
-print('ascending false is ', df.sort_values('score',ascending=True))
+print(df.sort_values('score',ascending=True))
 
 df.to_csv(r'Python for Data Science/Week 5/Panda/readstudentscores.py', index=False)
