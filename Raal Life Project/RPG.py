@@ -35,9 +35,8 @@ def create_character(name, strength, intelligence, charisma):
 
     return gamer
         
-total = create_character('ren',4,2,1)
+total = create_character('TeangDath',2,2,3)
 print(total)
 
 
-    
     
