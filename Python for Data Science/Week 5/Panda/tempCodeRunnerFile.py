@@ -1,25 +1,31 @@
 import pandas as pd
 
-df = pd.read_excel(r"C:\Users\ASUS\Downloads\Book1.xlsx")
+# Create the data from the image
+data = {
+    'Product': ['Laptop', 'Mouse', 'Keyboard', 'Monitor'],
+    'Category': ['Electronics', 'Electronic', 'Electronics', 'Electronic'],
+    'Price': ["$1200", "$25", "$50", "$300"],
+    'Sales': [10, 50, 30, 15]
+}
 
+df = pd.DataFrame(data)
 print(df)
-print('')
 
-#total price
-df['Total Price'] = df['Quantity'] * df['Price']
-print('total price is ', df)
-print('')
+# Step 0: Clean Category column (standardize to 'Electronics')
+df['Category'] = 'Electronics'
+df['Price'] = df['Price'].str.replace('$', '', regex=False).astype(float)
 
-#find orders above $500
-print('above $500 is ', df[df['Total Price'] > 500])
-print('')
+# Step 1: Calculate Revenue for each row
+df['Revenue'] = df['Price'] * df['Sales']
 
-#sort by total price
-print('Sorted by total price', df.sort_values(by='Total Price',ascending=False))
-print('')
+total_revenue = df['Revenue'].sum()
+avg_price = df['Price'].mean()
 
-#calculate the sum of total price
-print('sum of total price', df['Total Price'].sum())
+print(f"Total Revenue: {total_revenue}")
+print(f"Average Price: {avg_price}")
 
-#calculate the average of total price
-print('sum of average price', df['Total Price'].mean())
+# Step 2: Revenue by category
+rev_by_cat = df.groupby('Category')['Revenue'].sum()
+print(rev_by_cat)
+
+print()
